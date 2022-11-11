@@ -34,9 +34,80 @@ body {
     top: 30px;
     width: 100%;
     border: 2px solid #45403d69;
-    padding: 15px;
+    padding: 40px 50px;
 }
 
+.voting-screen .image{
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 220px;
+}
+
+.voting-screen .your-vote{
+    text-transform: uppercase;
+    font-size: 1.4em;
+    color: gray;
+}
+
+.voting-screen .office {
+    font-size: 1.8em;
+    margin: 20px 0px 30px 0px;
+
+}
+
+.voting-screen .helper{
+    border-top: 2px solid gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 40px;
+}
+
+
+.voting-screen .name, .voting-screen .party{
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+.voting-screen .helper p{
+    line-height: 1.5em;
+}
+
+.voting-screen .digits-area {
+    display: flex;
+    gap: 15px 18px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.voting-screen .digits-area .number{
+   font-size: 1.2em;
+}
+.voting-screen .digit {
+    border: 1px solid #45403d69;
+    width: 45px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.window .end-screen{
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 6em;
+    display: none;
+}
 .controls-area {
     max-width: 400px;
 }

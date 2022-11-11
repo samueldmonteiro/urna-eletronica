@@ -1,0 +1,9 @@
+etapas:
+    1 - deputado federal
+        - 4 digitos
+    2 - deputado estadual
+        - 5 digitos
+    3 - senador
+        - 3 digitos
+    4 - presidente
+        - 2 digitos
