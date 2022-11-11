@@ -1,0 +1,123 @@
+@import url('default.css');
+
+body {
+    background-color: #80808014;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.urna-container {
+    background-color: #ccc8c3;
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.window-area {
+    width: 100%;
+    padding: 30px 0px;
+    position: relative;
+    margin-right: 30px;
+}
+
+.window-area .window {
+    background-color: #f5f5f5;
+    position: absolute;
+    bottom: 30px;
+    top: 30px;
+    width: 100%;
+    border: 2px solid #45403d69;
+    padding: 15px;
+}
+
+.controls-area {
+    max-width: 400px;
+}
+
+.controls-area .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.controls-area .title img {
+    width: 100px;
+}
+
+.controls-area .title p {
+    font-size: 2.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.controls {
+    background-color: #45403d;
+    padding: 15px;
+}
+
+.controls .digits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    padding: 0px 14px;
+    margin: 10px 0px;
+}
+
+
+.digit#d-0 {
+    grid-column: 2;
+}
+
+.controls .digit {
+    background-color: black;
+    color: white;
+    padding: 12px 35px;
+    font-size: 1.4em;
+    margin: 10px;
+    border-radius: 5px;
+    max-width: 90px;
+    cursor: pointer;
+}
+
+.controls .actions {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls .actions .action {
+    background-color: red;
+    color: white;
+    font-size: 1.1em;
+    padding: 14px 15px;
+    margin: 15px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.action#blankVote {
+    color: black;
+    background-color: white;
+}
+
+.action#fixVote {
+    background-color: orangered;
+}
+
+.action#confirmVote {
+    background-color: green;
+    padding: 20px 15px;
+}
