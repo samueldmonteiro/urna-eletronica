@@ -73,6 +73,7 @@ export default class VotingMachine extends VotingMachineControl {
                     this.block = true;
 
                     if (!this.checkVote()) {
+                        this.digitNoExists = true;
                         this.inexistentCandidate();
                     } else {
                         this.showCandidate();
@@ -99,6 +100,7 @@ export default class VotingMachine extends VotingMachineControl {
     }
 
     confirmNullVote() {
+        this.showVotingScreen();
         this.container.querySelector(".helper").style = 'opacity: 1 !important;';
         this.container.querySelector('.action-message').innerText = 'Voto Nulo';
         this.container.querySelector('.action-message').style.opacity = 1;
@@ -106,10 +108,12 @@ export default class VotingMachine extends VotingMachineControl {
     }
 
     endScreen() {
-        this.container.querySelectorAll(".voting-screen div").forEach(element => {
+        this.container.querySelectorAll(".window div").forEach(element => {
             element.style.opacity = '0';
         });
 
         this.container.querySelector(".end-screen").style.diplay = 'flex';
+        this.container.querySelector(".end-screen").style.opacity = '1';
+
     }
 }

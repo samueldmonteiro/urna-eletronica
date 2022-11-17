@@ -19,7 +19,7 @@ export const stages = [
             }
         ]
     },
-    
+
     {
         office: 'Deputado Estadual',
         numberOfDigits: 5,

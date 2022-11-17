@@ -9,6 +9,7 @@ export default class VotingMachineControl {
     stages = null;
     currentStage = null;
     isNull = false;
+    digitNoExists = false;
 
     constructor(votingMachineContainer) {
         this.container = votingMachineContainer;
@@ -40,6 +41,21 @@ export default class VotingMachineControl {
         return candidate;
     }
 
+    candidateExistsInStage(candidate = null) {
+
+        if (!candidate) {
+            candidate = this.getCandidateByDigit(this.digit)
+        }
+
+        for (let c of this.getCurrenStage().candidates) {
+            if (candidate == c) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     startVoting() {
         this.votes = {};
         this.currentStage = 1;
@@ -52,9 +68,9 @@ export default class VotingMachineControl {
     checkVote() {
 
         let result = false;
-        this.getStages().forEach(stage=>{
-            stage.candidates.forEach(candidate=>{
-                if(this.getCurrenStage() == stage &&  candidate == this.getCandidateByDigit(this.digit)){
+        this.getStages().forEach(stage => {
+            stage.candidates.forEach(candidate => {
+                if (this.getCurrenStage() == stage && candidate == this.getCandidateByDigit(this.digit)) {
                     result = true;
                     return;
                 }
@@ -83,7 +99,11 @@ export default class VotingMachineControl {
 
     confirmVote() {
 
-        if(!this.getCurrenStage()){
+        if (!this.isNull && !this.candidateExistsInStage()) {
+            return;
+        }
+
+        if (!this.getCurrenStage()) {
             return;
         }
 
@@ -91,12 +111,12 @@ export default class VotingMachineControl {
             console.log('voto nulo');
             this.nullVote();
             this.isNull = false;
-        }else{
+        } else {
             this.addVote(this.getCandidateByDigit(this.digit));
         }
 
         this.nextStage();
-        if(!this.getCurrenStage()){
+        if (!this.getCurrenStage()) {
             console.log('acabou');
             this.endScreen();
             this.finalizeAudio();
@@ -114,12 +134,12 @@ export default class VotingMachineControl {
     }
 
 
-    confirmAudio(){
+    confirmAudio() {
         const audio = new Audio('../../../../assets/sounds/src_audio_som_tecla_urna.mp3');
         audio.play();
     }
 
-    finalizeAudio(){
+    finalizeAudio() {
         const audio = new Audio('../../../../assets/sounds/src_audio_votoConfirmado_urna.mp3');
         audio.play();
     }
