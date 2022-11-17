@@ -114,6 +114,5 @@ export default class VotingMachine extends VotingMachineControl {
 
         this.container.querySelector(".end-screen").style.diplay = 'flex';
         this.container.querySelector(".end-screen").style.opacity = '1';
-
     }
 }

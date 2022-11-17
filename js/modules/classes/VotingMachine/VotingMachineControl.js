@@ -57,6 +57,9 @@ export default class VotingMachineControl {
     }
 
     startVoting() {
+
+        this.configureControls();
+
         this.votes = {};
         this.currentStage = 1;
         this.currentClick = 0;
@@ -78,8 +81,6 @@ export default class VotingMachineControl {
         });
 
         return result;
-        // if(this.getCandidateByDigit(this.digit))
-        // return this.getCandidateByDigit(this.digit) || null;
     }
 
     nextStage() {
@@ -108,7 +109,6 @@ export default class VotingMachineControl {
         }
 
         if (this.isNull) {
-            console.log('voto nulo');
             this.nullVote();
             this.isNull = false;
         } else {
@@ -129,7 +129,6 @@ export default class VotingMachineControl {
     }
 
     nullVote() {
-        const currentOffice = this.getCurrenStage().office;
         this.addVote(null);
     }
 
