@@ -8,7 +8,7 @@ export const stages = [
                 name: 'Homem Pássaro',
                 number: 6793,
                 party: 'PBB',
-                img: 'homem-passaro.jpg'
+                img: 'homem-passaro.png'
             },
 
             {

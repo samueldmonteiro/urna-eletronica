@@ -100,11 +100,11 @@ body {
 }
 
 .show-candidate {
-    opacity: 1;
+    opacity: 1  !important;
 }
 
 .hide-candidate {
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .window .end-screen {
@@ -204,4 +204,22 @@ body {
 .action#confirmVote {
     background-color: green;
     padding: 20px 15px;
+}
+
+@keyframes no_exists {
+
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: #a3a2a2;
+    }
+}
+
+.action-message {
+    animation: no_exists 0.7s infinite alternate;
+    font-size: 3em;
+    margin: 0 auto;
+    opacity: 0;
 }
