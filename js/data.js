@@ -66,7 +66,7 @@ export const stages = [
                 name: 'Rick Sanchez',
                 number: 83,
                 party: 'TRT',
-                img: 'rick.png'
+                img: 'rick.jpg'
             },
             {
                 name: 'Summer',

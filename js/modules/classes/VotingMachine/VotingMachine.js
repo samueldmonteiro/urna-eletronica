@@ -86,7 +86,7 @@ export default class VotingMachine extends VotingMachineControl {
             this.confirmNullVote();
         });
 
-        this.container.querySelector('#fixVote').addEventListener('click', e => {
+        this.container.querySelector('#fixVote').addEventListener('click', _ => {
             this.digit = '';
             this.block = false;
             this.currentClick = 0;
