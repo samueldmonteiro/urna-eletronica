@@ -99,9 +99,11 @@ export default class VotingMachineControl {
         if(!this.getCurrenStage()){
             console.log('acabou');
             this.endScreen();
+            this.finalizeAudio();
             return;
         }
 
+        this.confirmAudio();
         this.showVotingScreen();
 
     }
@@ -109,6 +111,17 @@ export default class VotingMachineControl {
     nullVote() {
         const currentOffice = this.getCurrenStage().office;
         this.addVote(null);
+    }
+
+
+    confirmAudio(){
+        const audio = new Audio('../../../../assets/sounds/src_audio_som_tecla_urna.mp3');
+        audio.play();
+    }
+
+    finalizeAudio(){
+        const audio = new Audio('../../../../assets/sounds/src_audio_votoConfirmado_urna.mp3');
+        audio.play();
     }
 
 }
